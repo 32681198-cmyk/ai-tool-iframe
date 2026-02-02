@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI工具箱</title>
-    <!-- 解决样式兼容问题 -->
     <style>
         body { margin: 0; padding: 0; }
         iframe { 
             width: 100%; 
             max-width: 340px; 
-            height: 100vh; /* 高度自适应视口，替代auto更稳定 */
+            height: 100vh; 
             border: none; 
-            display: block; /* 消除默认边距 */
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- 替换为支持嵌入的AI工具箱地址 -->
+    <!-- 亲测支持嵌入的AI工具箱（百度AI，稳定不中断） -->
     <iframe 
-        src="https://ai.baidu.com/chat?channel=jianyi&disableConsole=1" 
+        src="https://ai.baidu.com/chat?channel=jianyi" 
         title="百度智能云AI工具箱"
-        sandbox="allow-scripts allow-same-origin allow-popups"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
     ></iframe>
 </body>
 </html>
