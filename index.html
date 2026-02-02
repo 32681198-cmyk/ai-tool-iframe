@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI工具箱（国内稳定版）</title>
+    <title>自建AI工具箱（340px宽）</title>
     <style>
-        body { margin: 0; padding: 0; background: #f8f9fa; }
-        /* 核心：强制宽度340px，高度自适应 */
-        #ai-toolbox {
-            width: 100%;
-            max-width: 340px; /* 严格限制最大宽度340px，不会超宽 */
-            height: 100vh;    /* 高度占满屏幕，内容超出自动滚动 */
-            border: none;
-            display: block;
-            margin: 0 auto;   /* 页面居中显示 */
-        }
+        body { margin: 0; padding: 20px; background: #fff; max-width: 340px; margin: 0 auto; }
+        h1 { font-size: 18px; color: #333; text-align: center; }
+        .tool-group { margin: 15px 0; border: 1px solid #eee; padding: 10px; border-radius: 8px; }
+        .tool-group h2 { font-size: 16px; color: #555; margin: 0 0 10px 0; }
+        .tool-link { display: block; padding: 8px 0; color: #2563eb; text-decoration: none; }
+        .tool-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <iframe 
-        id="ai-toolbox"
-        src="https://ai.hao.360.com/"  <!-- 360官方AI导航，非百度，国内稳定 -->
-        title="AI工具箱合集（非百度）"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-        loading="lazy"
-    ></iframe>
+    <h1>AI工具箱合集（自建版）</h1>
+    
+    <div class="tool-group">
+        <h2>AI生成工具</h2>
+        <a href="https://www.midjourney.com" class="tool-link" target="_blank">Midjourney（AI绘画）</a>
+        <a href="https://www.runwayml.com" class="tool-link" target="_blank">Runway（AI视频）</a>
+        <a href="https://chat.openai.com" class="tool-link" target="_blank">ChatGPT（AI对话）</a>
+    </div>
+
+    <div class="tool-group">
+        <h2>办公工具</h2>
+        <a href="https://www.canva.cn" class="tool-link" target="_blank">Canva（设计）</a>
+        <a href="https://www.deepl.com" class="tool-link" target="_blank">DeepL（翻译）</a>
+        <a href="https://www.notion.so" class="tool-link" target="_blank">Notion（笔记）</a>
+    </div>
+
+    <div class="tool-group">
+        <h2>提示词工具</h2>
+        <a href="https://prompt.noonshot.com" class="tool-link" target="_blank">Noonshot（提示词库）</a>
+        <a href="https://promptoMANIA.com" class="tool-link" target="_blank">promptoMANIA（提示词生成）</a>
+    </div>
 </body>
 </html>
