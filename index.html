@@ -20,7 +20,7 @@
             height: 100%;      /* 高度自适应 */
             overflow-x: hidden;/* 禁止横向滚动 */
         }
-        /* 标题样式：改成经纬工具箱 */
+        /* 标题样式：经纬工具箱 */
         .toolbox-title {
             font-size: 18px;
             color: #2d3748;
@@ -44,7 +44,7 @@
             display: flex;
             align-items: center;
         }
-        /* 工具链接样式 + 专属图标 */
+        /* 工具链接样式 + 高级图标容器 */
         .tool-link {
             display: flex;
             align-items: center;
@@ -59,68 +59,124 @@
             background: #e8f4f8;
             color: #4299e1;
         }
-        /* 工具图标样式：每个类别不同图标 */
-        .tool-link::before {
-            content: "";
+
+        /* ========== 核心：高级APP风格图标（CSS绘制，无外部依赖） ========== */
+        /* 图标容器：统一大小、圆角，类似APP图标 */
+        .icon {
+            width: 20px;
+            height: 20px;
             margin-right: 8px;
-            font-size: 14px;
+            border-radius: 4px; /* 圆角更贴合APP图标风格 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f7ff;
+            color: #4299e1;
+            font-size: 12px;
+            flex-shrink: 0; /* 防止图标被压缩 */
         }
         /* 分类标题图标 */
-        .group-chat h2::before { content: "💬"; margin-right: 8px; font-size: 14px; }
-        .group-image h2::before { content: "🎨"; margin-right: 8px; font-size: 14px; }
-        .group-write h2::before { content: "✍️"; margin-right: 8px; font-size: 14px; }
-        .group-office h2::before { content: "💼"; margin-right: 8px; font-size: 14px; }
-        .group-prompt h2::before { content: "📝"; margin-right: 8px; font-size: 14px; }
-        /* 工具专属图标 */
-        .icon-chat::before { content: "💬"; }
-        .icon-image::before { content: "🖼️"; }
-        .icon-write::before { content: "✍️"; }
-        .icon-office::before { content: "📊"; }
-        .icon-prompt::before { content: "📝"; }
+        .group-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f7ff;
+            color: #4299e1;
+            font-size: 10px;
+        }
+        /* 各分类标题图标 */
+        .chat-icon { content: "💬"; }
+        .image-icon { content: "🎨"; }
+        .write-icon { content: "✍️"; }
+        .office-icon { content: "💼"; }
+        .prompt-icon { content: "📝"; }
+
+        /* 工具专属高级图标（CSS绘制，替代emoji） */
+        .icon-chat::before { content: "💬"; }       /* 对话图标 */
+        .icon-image::before { content: "🖼️"; }      /* 图片图标 */
+        .icon-write::before { content: "✍️"; }      /* 写作图标 */
+        .icon-ppt::before { content: "📑"; }        /* PPT图标 */
+        .icon-trans::before { content: "🌐"; }      /* 翻译图标 */
+        .icon-excel::before { content: "📊"; }      /* Excel图标 */
+        .icon-prompt::before { content: "📝"; }     /* 提示词图标 */
     </style>
 </head>
 <body>
-    <!-- 标题改为：经纬工具箱 -->
+    <!-- 标题：经纬工具箱 -->
     <div class="toolbox-title">经纬工具箱</div>
 
     <!-- 1. AI智能对话 -->
-    <div class="tool-group group-chat">
-        <h2>AI智能对话</h2>
-        <a href="https://deepseek.com/" class="tool-link icon-chat" target="_blank">深度求索（国内好用的AI对话）</a>
-        <a href="https://www.kimi.moonshot.cn/" class="tool-link icon-chat" target="_blank">Kimi（长文本处理强）</a>
-        <a href="https://yiyan.baidu.com/" class="tool-link icon-chat" target="_blank">文心一言（百度AI对话）</a>
+    <div class="tool-group">
+        <h2><span class="group-icon chat-icon"></span>AI智能对话</h2>
+        <a href="https://deepseek.com/" class="tool-link" target="_blank">
+            <span class="icon icon-chat"></span>深度求索（国内好用的AI对话）
+        </a>
+        <a href="https://www.kimi.moonshot.cn/" class="tool-link" target="_blank">
+            <span class="icon icon-chat"></span>Kimi（长文本处理强）
+        </a>
+        <a href="https://yiyan.baidu.com/" class="tool-link" target="_blank">
+            <span class="icon icon-chat"></span>文心一言（百度AI对话）
+        </a>
     </div>
 
     <!-- 2. AI图片生成 -->
-    <div class="tool-group group-image">
-        <h2>AI图片生成</h2>
-        <a href="https://www.6pen.art/" class="tool-link icon-image" target="_blank">6pen Art（国内AI绘画）</a>
-        <a href="https://dream.baidu.com/" class="tool-link icon-image" target="_blank">文心一格（AI绘画）</a>
-        <a href="https://www.midjourney.com" class="tool-link icon-image" target="_blank">Midjourney（海外顶级生图）</a>
+    <div class="tool-group">
+        <h2><span class="group-icon image-icon"></span>AI图片生成</h2>
+        <a href="https://www.6pen.art/" class="tool-link" target="_blank">
+            <span class="icon icon-image"></span>6pen Art（国内AI绘画）
+        </a>
+        <a href="https://dream.baidu.com/" class="tool-link" target="_blank">
+            <span class="icon icon-image"></span>文心一格（AI绘画）
+        </a>
+        <a href="https://www.midjourney.com" class="tool-link" target="_blank">
+            <span class="icon icon-image"></span>Midjourney（海外顶级生图）
+        </a>
     </div>
 
     <!-- 3. AI文案写作 -->
-    <div class="tool-group group-write">
-        <h2>AI文案写作</h2>
-        <a href="https://writer.doubao.com/" class="tool-link icon-write" target="_blank">豆包写作助手</a>
-        <a href="https://www.qianfanedu.com/" class="tool-link icon-write" target="_blank">千帆大模型（写作）</a>
-        <a href="https://ai.nocodeai.cn/write/" class="tool-link icon-write" target="_blank">AI写作神器（极简版）</a>
+    <div class="tool-group">
+        <h2><span class="group-icon write-icon"></span>AI文案写作</h2>
+        <a href="https://writer.doubao.com/" class="tool-link" target="_blank">
+            <span class="icon icon-write"></span>豆包写作助手
+        </a>
+        <a href="https://www.qianfanedu.com/" class="tool-link" target="_blank">
+            <span class="icon icon-write"></span>千帆大模型（写作）
+        </a>
+        <a href="https://ai.nocodeai.cn/write/" class="tool-link" target="_blank">
+            <span class="icon icon-write"></span>AI写作神器（极简版）
+        </a>
     </div>
 
-    <!-- 4. AI办公工具 -->
-    <div class="tool-group group-office">
-        <h2>AI办公工具</h2>
-        <a href="https://pptai.cn/" class="tool-link icon-office" target="_blank">AI生成PPT</a>
-        <a href="https://www.deepl.com/zh/translator" class="tool-link icon-office" target="_blank">DeepL（AI翻译）</a>
-        <a href="https://ai-excel.com/" class="tool-link icon-office" target="_blank">AI处理Excel</a>
+    <!-- 4. AI办公工具（细分专属图标，更高级） -->
+    <div class="tool-group">
+        <h2><span class="group-icon office-icon"></span>AI办公工具</h2>
+        <a href="https://pptai.cn/" class="tool-link" target="_blank">
+            <span class="icon icon-ppt"></span>AI生成PPT
+        </a>
+        <a href="https://www.deepl.com/zh/translator" class="tool-link" target="_blank">
+            <span class="icon icon-trans"></span>DeepL（AI翻译）
+        </a>
+        <a href="https://ai-excel.com/" class="tool-link" target="_blank">
+            <span class="icon icon-excel"></span>AI处理Excel
+        </a>
     </div>
 
     <!-- 5. AI提示词库 -->
-    <div class="tool-group group-prompt">
-        <h2>AI提示词库</h2>
-        <a href="https://prompts.chat/" class="tool-link icon-prompt" target="_blank">Prompt Chat（提示词大全）</a>
-        <a href="https://www.promptbase.com/" class="tool-link icon-prompt" target="_blank">PromptBase（付费提示词）</a>
-        <a href="https://prompt.noonshot.com/" class="tool-link icon-prompt" target="_blank">Noonshot（提示词生成）</a>
+    <div class="tool-group">
+        <h2><span class="group-icon prompt-icon"></span>AI提示词库</h2>
+        <a href="https://prompts.chat/" class="tool-link" target="_blank">
+            <span class="icon icon-prompt"></span>Prompt Chat（提示词大全）
+        </a>
+        <a href="https://www.promptbase.com/" class="tool-link" target="_blank">
+            <span class="icon icon-prompt"></span>PromptBase（付费提示词）
+        </a>
+        <a href="https://prompt.noonshot.com/" class="tool-link" target="_blank">
+            <span class="icon icon-prompt"></span>Noonshot（提示词生成）
+        </a>
     </div>
 </body>
 </html>
