@@ -3,37 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自建AI工具箱（340px宽）</title>
+    <title>自建AI工具箱（匹配ai-bot.cn）</title>
     <style>
-        body { margin: 0; padding: 20px; background: #fff; max-width: 340px; margin: 0 auto; }
-        h1 { font-size: 18px; color: #333; text-align: center; }
-        .tool-group { margin: 15px 0; border: 1px solid #eee; padding: 10px; border-radius: 8px; }
-        .tool-group h2 { font-size: 16px; color: #555; margin: 0 0 10px 0; }
-        .tool-link { display: block; padding: 8px 0; color: #2563eb; text-decoration: none; }
-        .tool-link:hover { text-decoration: underline; }
+        /* 全局样式：清空默认边距，限定最大宽度340px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            max-width: 340px; /* 核心：强制最大宽度340px */
+            margin: 0 auto;    /* 居中显示 */
+            padding: 15px;
+            background: #f5f7fa;
+            height: 100%;      /* 高度自适应 */
+            overflow-x: hidden;/* 禁止横向滚动 */
+        }
+        /* 标题样式 */
+        .toolbox-title {
+            font-size: 18px;
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4299e1;
+        }
+        /* 工具分类卡片样式 */
+        .tool-group {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .tool-group h2 {
+            font-size: 16px;
+            color: #4299e1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        /* 工具链接样式 */
+        .tool-link {
+            display: block;
+            padding: 10px 8px;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            transition: background 0.2s;
+        }
+        .tool-link:hover {
+            background: #e8f4f8;
+            color: #4299e1;
+        }
+        /* 小图标替代（不用加载外部图片，更稳定） */
+        .tool-group h2::before {
+            content: "🔧";
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        .group-chat h2::before { content: "💬"; }
+        .group-image h2::before { content: "🎨"; }
+        .group-write h2::before { content: "✍️"; }
+        .group-office h2::before { content: "💼"; }
+        .group-prompt h2::before { content: "📝"; }
     </style>
 </head>
 <body>
-    <h1>AI工具箱合集（自建版）</h1>
-    
-    <div class="tool-group">
-        <h2>AI生成工具</h2>
-        <a href="https://www.midjourney.com" class="tool-link" target="_blank">Midjourney（AI绘画）</a>
-        <a href="https://www.runwayml.com" class="tool-link" target="_blank">Runway（AI视频）</a>
-        <a href="https://chat.openai.com" class="tool-link" target="_blank">ChatGPT（AI对话）</a>
+    <!-- 工具箱标题 -->
+    <div class="toolbox-title">AI工具箱（自建版）</div>
+
+    <!-- 1. AI对话类（核心功能） -->
+    <div class="tool-group group-chat">
+        <h2>AI智能对话</h2>
+        <a href="https://deepseek.com/" class="tool-link" target="_blank">深度求索（国内好用的AI对话）</a>
+        <a href="https://www.kimi.moonshot.cn/" class="tool-link" target="_blank">Kimi（长文本处理强）</a>
+        <a href="https://yiyan.baidu.com/" class="tool-link" target="_blank">文心一言（百度AI对话）</a>
     </div>
 
-    <div class="tool-group">
-        <h2>办公工具</h2>
-        <a href="https://www.canva.cn" class="tool-link" target="_blank">Canva（设计）</a>
-        <a href="https://www.deepl.com" class="tool-link" target="_blank">DeepL（翻译）</a>
-        <a href="https://www.notion.so" class="tool-link" target="_blank">Notion（笔记）</a>
+    <!-- 2. AI生图类 -->
+    <div class="tool-group group-image">
+        <h2>AI图片生成</h2>
+        <a href="https://www.6pen.art/" class="tool-link" target="_blank">6pen Art（国内AI绘画）</a>
+        <a href="https://dream.baidu.com/" class="tool-link" target="_blank">文心一格（AI绘画）</a>
+        <a href="https://www.midjourney.com" class="tool-link" target="_blank">Midjourney（海外顶级生图）</a>
     </div>
 
-    <div class="tool-group">
-        <h2>提示词工具</h2>
-        <a href="https://prompt.noonshot.com" class="tool-link" target="_blank">Noonshot（提示词库）</a>
-        <a href="https://promptoMANIA.com" class="tool-link" target="_blank">promptoMANIA（提示词生成）</a>
+    <!-- 3. AI写作类 -->
+    <div class="tool-group group-write">
+        <h2>AI文案写作</h2>
+        <a href="https://writer.doubao.com/" class="tool-link" target="_blank">豆包写作助手</a>
+        <a href="https://www.qianfanedu.com/" class="tool-link" target="_blank">千帆大模型（写作）</a>
+        <a href="https://ai.nocodeai.cn/write/" class="tool-link" target="_blank">AI写作神器（极简版）</a>
+    </div>
+
+    <!-- 4. AI办公类 -->
+    <div class="tool-group group-office">
+        <h2>AI办公工具</h2>
+        <a href="https://pptai.cn/" class="tool-link" target="_blank">AI生成PPT</a>
+        <a href="https://www.deepl.com/zh/translator" class="tool-link" target="_blank">DeepL（AI翻译）</a>
+        <a href="https://ai-excel.com/" class="tool-link" target="_blank">AI处理Excel</a>
+    </div>
+
+    <!-- 5. 提示词工具类 -->
+    <div class="tool-group group-prompt">
+        <h2>AI提示词库</h2>
+        <a href="https://prompts.chat/" class="tool-link" target="_blank">Prompt Chat（提示词大全）</a>
+        <a href="https://www.promptbase.com/" class="tool-link" target="_blank">PromptBase（付费提示词）</a>
+        <a href="https://prompt.noonshot.com/" class="tool-link" target="_blank">Noonshot（提示词生成）</a>
     </div>
 </body>
 </html>
