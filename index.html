@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI工具箱（匹配ai-bot.cn）</title>
+    <title>AI工具箱（国内稳定版）</title>
     <style>
-        /* 清除页面默认边距，确保样式纯净 */
-        body { 
-            margin: 0; 
-            padding: 0; 
-            background: #ffffff;
-        }
-        /* 核心样式：强制最大宽度340px，高度自适应 */
-        #ai-tool-iframe {
-            width: 100%;          /* 窄屏自适应 */
-            max-width: 340px;     /* 严格限制最大宽度340px，不超宽 */
-            height: calc(100vh - 0px); /* 高度自适应屏幕，无空白 */
-            border: 0;            /* 隐藏边框，和ai-bot.cn一致 */
-            display: block;       /* 消除默认间隙 */
-            overflow-y: auto;     /* 内容超出时自动滚动 */
+        body { margin: 0; padding: 0; background: #f8f9fa; }
+        /* 核心：强制宽度340px，高度自适应 */
+        #ai-toolbox {
+            width: 100%;
+            max-width: 340px; /* 严格限制最大宽度340px，不会超宽 */
+            height: 100vh;    /* 高度占满屏幕，内容超出自动滚动 */
+            border: none;
+            display: block;
+            margin: 0 auto;   /* 页面居中显示 */
         }
     </style>
 </head>
 <body>
-    <!-- 非百度、聚合型AI工具箱（和ai-bot.cn功能/布局一致） -->
     <iframe 
-        id="ai-tool-iframe"
-        src="https://www.ai123456.com/"
+        id="ai-toolbox"
+        src="https://ai.hao.360.com/"  <!-- 360官方AI导航，非百度，国内稳定 -->
         title="AI工具箱合集（非百度）"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
         loading="lazy"
     ></iframe>
 </body>
